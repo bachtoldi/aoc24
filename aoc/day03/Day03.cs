@@ -3,11 +3,15 @@ using aoc._shared;
 
 namespace aoc.day03;
 
-public class Day03
+public static partial class Day03
 {
     private const string Capybara = "capybara";
-    private const string RegexA = @"mul\(([0-9]{1,3})\,([0-9]{1,3})\)";
-    private const string RegexB = @"mul\(([0-9]{1,3})\,([0-9]{1,3})\)|(do\(\))|(don't\(\))";
+
+    [GeneratedRegex(@"mul\(([0-9]{1,3})\,([0-9]{1,3})\)")]
+    private static partial Regex RegexA();
+
+    [GeneratedRegex(@"mul\(([0-9]{1,3})\,([0-9]{1,3})\)|(do\(\))|(don't\(\))")]
+    private static partial Regex RegexB();
 
     public static async Task<string> Execute()
     {
@@ -25,8 +29,7 @@ public class Day03
     private static async Task<string> A()
     {
         List<Match> matches = [];
-        var regex = new Regex(RegexA);
-        await "day03".ReadAsync(line => matches.AddRange(regex.Matches(line).ToList()));
+        await "day03".ReadAsync(line => matches.AddRange(RegexA().Matches(line).ToList()));
 
         var total = 0;
         foreach (var match in matches)
@@ -42,8 +45,7 @@ public class Day03
     private static async Task<string> B()
     {
         List<Match> matches = [];
-        var regex = new Regex(RegexB);
-        await "day03".ReadAsync(line => matches.AddRange(regex.Matches(line).ToList()));
+        await "day03".ReadAsync(line => matches.AddRange(RegexB().Matches(line).ToList()));
 
         var total = 0;
         var enabled = true;

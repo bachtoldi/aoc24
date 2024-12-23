@@ -2,9 +2,10 @@
 
 namespace aoc.day01;
 
-public class Day01
+public static class Day01
 {
     private const string Aardvark = "aardvark";
+
     public static async Task<string> Execute()
     {
         List<int> first = [];
@@ -22,7 +23,7 @@ public class Day01
         {
             "1" => A(first, last),
             "2" => B(first, last),
-            _ => throw new AggregateException(InputReaderExtensions.Hayaa)
+            _ => throw new AggregateException(InputReaderExtensions.Hayaa),
         };
     }
 

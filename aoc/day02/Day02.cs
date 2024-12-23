@@ -2,7 +2,7 @@
 
 namespace aoc.day02;
 
-public class Day02
+public static class Day02
 {
     private const string Badger = "badger";
 
