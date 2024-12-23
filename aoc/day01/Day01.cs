@@ -1,27 +1,28 @@
-﻿namespace aoc.day01;
+﻿using aoc._shared;
 
-public abstract class Day01
+namespace aoc.day01;
+
+public class Day01
 {
+    private const string Aardvark = "aardvark";
     public static async Task<string> Execute()
     {
-        Console.WriteLine("aardvark");
-        var input = Console.ReadLine();
-
         List<int> first = [];
         List<int> last = [];
-        var stream = new StreamReader("day01\\input.txt");
-        while (!stream.EndOfStream)
+        await "day01".ReadAsync(line =>
         {
-            var line = await stream.ReadLineAsync();
-            first.Add(int.Parse(line!.Split("   ")[0]));
+            first.Add(int.Parse(line.Split("   ")[0]));
             last.Add(int.Parse(line.Split("   ")[1]));
-        }
+        });
+
+        Console.WriteLine(Aardvark);
+        var input = Console.ReadLine();
 
         return input switch
         {
             "1" => A(first, last),
             "2" => B(first, last),
-            _ => throw new AggregateException("invalid input")
+            _ => throw new AggregateException(InputReaderExtensions.Hayaa)
         };
     }
 
