@@ -5,16 +5,17 @@ namespace aoc.day05;
 
 public static partial class Day05
 {
+    private const string Folder = "day05";
     private const string Egret = "egret";
 
     [GeneratedRegex(@"([0-9]{2})\|([0-9]{2})")]
     private static partial Regex Regex();
 
-    public static async Task<string> Execute()
+    public static string Execute()
     {
         Dictionary<int, List<int>> rules = [];
         List<int[]> updates = [];
-        await "day05".ReadAsync(line =>
+        Folder.Read(line =>
         {
             switch (line.Length)
             {

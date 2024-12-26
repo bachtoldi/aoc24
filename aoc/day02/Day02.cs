@@ -4,12 +4,13 @@ namespace aoc.day02;
 
 public static class Day02
 {
+    private const string Folder = "day02";
     private const string Badger = "badger";
 
-    public static async Task<string> Execute()
+    public static string Execute()
     {
         List<string[]> levels = [];
-        await "day02".ReadAsync(line =>
+        Folder.Read(line =>
         {
             levels.Add(line.Split(" "));
         });

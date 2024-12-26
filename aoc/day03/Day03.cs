@@ -5,6 +5,7 @@ namespace aoc.day03;
 
 public static partial class Day03
 {
+    private const string Folder = "day03";
     private const string Capybara = "capybara";
 
     [GeneratedRegex(@"mul\(([0-9]{1,3})\,([0-9]{1,3})\)")]
@@ -13,23 +14,23 @@ public static partial class Day03
     [GeneratedRegex(@"mul\(([0-9]{1,3})\,([0-9]{1,3})\)|(do\(\))|(don't\(\))")]
     private static partial Regex RegexB();
 
-    public static async Task<string> Execute()
+    public static string Execute()
     {
         Console.WriteLine(Capybara);
         var input = Console.ReadLine();
 
         return input switch
         {
-            "1" => await A(),
-            "2" => await B(),
+            "1" => A(),
+            "2" => B(),
             _ => throw new AggregateException(InputReaderExtensions.Hayaa),
         };
     }
 
-    private static async Task<string> A()
+    private static string A()
     {
         List<Match> matches = [];
-        await "day03".ReadAsync(line => matches.AddRange(RegexA().Matches(line).ToList()));
+        Folder.Read(line => matches.AddRange(RegexA().Matches(line).ToList()));
 
         var total = 0;
         foreach (var match in matches)
@@ -42,10 +43,10 @@ public static partial class Day03
         return total.ToString();
     }
 
-    private static async Task<string> B()
+    private static string B()
     {
         List<Match> matches = [];
-        await "day03".ReadAsync(line => matches.AddRange(RegexB().Matches(line).ToList()));
+        Folder.Read(line => matches.AddRange(RegexB().Matches(line).ToList()));
 
         var total = 0;
         var enabled = true;

@@ -4,13 +4,14 @@ namespace aoc.day04;
 
 public static class Day04
 {
+    private const string Folder = "day04";
     private const string Dugong = "dugong";
 
-    public static async Task<string> Execute()
+    public static string Execute()
     {
         var grid = new char[140][];
         var lineIndex = 0;
-        await "day04".ReadAsync(line =>
+        Folder.Read(line =>
         {
             grid[lineIndex] = line.ToCharArray();
             lineIndex++;

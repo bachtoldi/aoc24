@@ -4,13 +4,14 @@ namespace aoc.day01;
 
 public static class Day01
 {
+    private const string Folder = "day01";
     private const string Aardvark = "aardvark";
 
-    public static async Task<string> Execute()
+    public static string Execute()
     {
         List<int> first = [];
         List<int> last = [];
-        await "day01".ReadAsync(line =>
+        Folder.Read(line =>
         {
             first.Add(int.Parse(line.Split("   ")[0]));
             last.Add(int.Parse(line.Split("   ")[1]));
