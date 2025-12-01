@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="2025">
+    <Project Path="2025/aoc/aoc.csproj" />
+  </Folder>
   <Folder Name="2024">
     <Project Path="2024/aoc/aoc.csproj" />
   </Folder>
