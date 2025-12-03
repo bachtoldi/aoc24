@@ -1,8 +1,14 @@
 ﻿using aoc._shared;
 using aoc.day01;
 using aoc.day02;
+using aoc.day03;
 
-var foo = new Dictionary<string, Func<string>> { { "1", Day01.Execute } , {"2", Day02.Execute}};
+var foo = new Dictionary<string, Func<string>>
+{
+    { "1", Day01.Execute },
+    { "2", Day02.Execute },
+    { "3", Day03.Execute }
+};
 
 var input = string.Empty;
 
