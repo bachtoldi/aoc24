@@ -3,13 +3,15 @@ using aoc.day01;
 using aoc.day02;
 using aoc.day03;
 using aoc.day04;
+using aoc.day05;
 
 var foo = new Dictionary<string, Func<string>>
 {
     { "1", Day01.Execute },
     { "2", Day02.Execute },
     { "3", Day03.Execute },
-    { "4", Day04.Execute }
+    { "4", Day04.Execute },
+    { "5", Day05.Execute }
 };
 
 var input = string.Empty;
